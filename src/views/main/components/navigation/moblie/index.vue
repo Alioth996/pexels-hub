@@ -16,17 +16,21 @@
             <!-- 分类选项 -->
             <li v-for="(cate, index) in categoryList" :key="cate.id"
                 class="shrink-0 px-1.5 py-0.5 z-10 duration-200 font-medium last:mr-4" :ref="setItemRef"
-                :class="currentCateTarget === index ? 'text-zinc-100' : ''" @click="currentCateTarget = index">
+                :class="currentCateTarget === index ? 'text-zinc-100' : ''" @click="onItemClick(index)">
                 {{ cate.name }}
             </li>
         </ul>
-        <x-popup v-model="isShowPopup"/>
+        <x-popup v-model="isShowPopup">
+          <cate-menu :categorys="categoryList" @onItemClick="onItemClick"/>
+<!--          todo bug: 点击超过屏幕的菜单项后顶部导航栏没有移动到对应的位置-->
+        </x-popup>
     </div>
 </template>
 
 <script setup>
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
+import cateMenu from '@/views/main/components/cateMenu/index.vue'
 
 defineProps({
     categoryList: {
@@ -42,6 +46,11 @@ const currentCateTarget = ref(0)
 const ulTarget = ref(null)
 const { x: ulX } = useScroll(ulTarget)
 
+
+const onItemClick = (index)=>{
+  currentCateTarget.value = index
+  isShowPopup.value = false
+}
 
 
 // 滑块初始样式
