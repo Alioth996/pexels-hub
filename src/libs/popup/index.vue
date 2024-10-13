@@ -3,16 +3,16 @@
         <teleport to="body">
             <transition name="fade">
                 <div
-                  v-if="modelValue"
-                  @click="emits('update:modelValue',false)"
+                  v-if="isPopupShow"
+                  @click="isPopupShow = false"
                   class="w-full h-full fixed top-0 left-0 bg-zinc-900/80 z-40">
                 </div>
             </transition>
           <transition name="popup">
             <div
-              v-if="modelValue"
+              v-if="isPopupShow"
               v-bind="$attrs"
-              class="w-screen bg-white z-50 fixed bottom-0">
+              class="w-screen bg-white z-50 fixed bottom-0 rounded-t">
               <slot/>
             </div>
           </transition>
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import {useScrollLock} from '@vueuse/core'
+import {useScrollLock,useVModel} from '@vueuse/core'
 import { watch } from 'vue'
 
 const props = defineProps({
@@ -32,11 +32,15 @@ const props = defineProps({
   }
 })
 
-const emits = defineEmits( ['update:modelValue'])
+// 响应式数据, 当isPopupShow 值发生改变时, 会自动触发 emit 修改modelValue
+const isPopupShow = useVModel(props)
+
+
+ defineEmits( ['update:modelValue'])
 
 // 菜单显示禁止页面滚动
 const isLocked = useScrollLock(document.body)
-watch(()=>props.modelValue,(val)=>{
+watch(()=>isPopupShow,(val)=>{
   isLocked.value = val
 },
   {
