@@ -8,11 +8,15 @@ vue3高仿Pexels网站，适应移动端和PC端
 - Axios
 
 
+## 亮点
+- 独立开发一套中前台的物料解决方案
+
+
 ## 开发日记
 
 
 ### 2024-10.11
-
+- bug: 把.env.development 和 .env.production 放在了 src目录下导致vite(dotenv)找不到配置文件
 - 简单封装 `axios`
 - 使用 vite `proxy` 解决开发环境下的跨域问题
 ---

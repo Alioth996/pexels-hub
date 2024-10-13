@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 import { useWindowSize } from '@vueuse/core';
-import { PC_DEVICE_WIDTH } from '@/constants'
+import { PC_DEVICE_WIDTH ,MAX_FONT_SIZE} from '@/constants'
 
 // 这个函数的工作原理如下：
 // 1. 我们定义了一个名为 `isMobile()` 的函数。并使用computed函数返回一个响应式变量
@@ -24,4 +24,16 @@ export const isMobile=computed(()=>{
     return width.value < PC_DEVICE_WIDTH  && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 })
 
+
+/**
+ * @description 动态设置根元素字体大小
+ */
+export const changeRem = () => {
+    const html = document.documentElement
+
+    window.addEventListener('DOMContentLoaded',()=>{
+        const width = html.clientWidth
+        html.style.fontSize = Math.min(width / 10, MAX_FONT_SIZE) + 'px'
+    })
+}
 
