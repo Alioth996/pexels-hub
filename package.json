@@ -8,8 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@polkadot/vue-identicon": "^3.10.1",
     "@vueuse/core": "^11.1.0",
     "axios": "^1.7.7",
+    "blueimp-md5": "^2.19.0",
+    "identicon.js": "^2.3.3",
+    "nanoid": "^5.0.7",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2"

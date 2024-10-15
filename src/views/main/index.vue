@@ -1,10 +1,10 @@
 <template>
     <!-- <h1>PexelsHub</h1> -->
     <!-- 手机头部导航栏 -->
-    <PXH-navigition />
+    <pxh-navigition />
 </template>
 
 <script setup>
-import PXHNavigition from './components/navigation/index.vue'
+import PxhNavigition from './components/navigation/index.vue'
 
 </script>

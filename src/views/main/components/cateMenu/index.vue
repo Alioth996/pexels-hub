@@ -7,7 +7,7 @@
       <li
         v-for="(item,index) in categorys"
         :key="item.id"
-        class="text-lg text-zinc-900 dark:text-zinc-300 p-1.5 duration-100 active:bg-zinc-100 active:dark:bg-zinc-900"
+        class="text-base text-zinc-900 dark:text-zinc-300 px-1.5 py-1 duration-200 active:bg-yellow-500 active:dark:bg-zinc-200"
         @click="$emit('onItemClick', index)"
       >
         {{ item.name }}

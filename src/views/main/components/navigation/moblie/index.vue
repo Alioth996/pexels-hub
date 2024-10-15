@@ -6,7 +6,7 @@
             <!-- 汉堡按钮 -->
             <li class="flex items-center fixed right-[-1px] top-0 h-4 px-1 z-20 bg-white shadow-l-white"
                 @click="isShowPopup = true">
-                <x-svg-icon name="hamburger" class="w-1.5 h-1.5 " />
+                <pxh-svg-icon name="hamburger" class="w-1.5 h-1.5 " />
             </li>
 
             <!-- 滑块 -->
@@ -20,10 +20,10 @@
                 {{ cate.name }}
             </li>
         </ul>
-        <x-popup v-model="isShowPopup">
+        <pxh-popup v-model="isShowPopup">
           <cate-menu :categorys="categoryList" @onItemClick="onItemClick"/>
 <!--          todo bug: 点击超过屏幕的菜单项后顶部导航栏没有移动到对应的位置-->
-        </x-popup>
+        </pxh-popup>
     </div>
 </template>
 
