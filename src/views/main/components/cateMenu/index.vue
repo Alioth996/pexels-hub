@@ -4,12 +4,9 @@
       所有分类
     </h2>
     <ul class="overflow-y-scroll">
-      <li
-        v-for="(item,index) in categorys"
-        :key="item.id"
+      <li v-for="(item, index) in $store.getters.categorys" :key="item.id"
         class="text-base text-zinc-900 dark:text-zinc-300 px-1.5 py-1 duration-200 active:bg-yellow-500 active:dark:bg-zinc-200"
-        @click="$emit('onItemClick', index)"
-      >
+        @click="$emit('onItemClick', index)">
         {{ item.name }}
       </li>
     </ul>
@@ -17,15 +14,5 @@
 </template>
 
 <script setup>
-
-defineProps({
-  categorys: {
-    type:Array,
-    required: true
-  }
-})
-
 defineEmits(['onItemClick'])
 </script>
-
-<style lang="scss" scoped></style>

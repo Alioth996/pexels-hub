@@ -1,8 +1,9 @@
 <template>
+  <!-- pc端一级路由出口 -->
   <div class="h-screen">
-  <PxhHeader class="h-header" />
-    <PxhMain class="h-main"/>
-    <Floating/>
+    <PxhHeader class="h-header" />
+    <PxhMain class="h-main" />
+    <Floating />
   </div>
 </template>
 
@@ -25,6 +26,4 @@ import Floating from "./components/Floating.vue";
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -1,6 +1,6 @@
 <template>
     <!-- <h1>PexelsHub</h1> -->
-    <!-- 手机头部导航栏 -->
+    <!-- 头部导航栏 -->
     <pxh-navigition />
 </template>
 
