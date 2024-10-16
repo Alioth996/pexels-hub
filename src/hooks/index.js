@@ -1,5 +1,10 @@
-import { ref, readonly } from 'vue';
-import { nanoid } from 'nanoid'
+import {
+    ref,
+    readonly
+} from 'vue';
+import {
+    nanoid
+} from 'nanoid'
 import Identicon from 'identicon.js'
 import md5 from 'blueimp-md5';
 

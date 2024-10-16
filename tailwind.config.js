@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   // tailwindcss 配置
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
@@ -11,11 +12,12 @@ module.exports = {
         xl: ['0.65rem', '0.75rem']
       },
       boxShadow: {
-        'l-white': '-10px 0 10px white'
+        'l-white': '-10px 0 10px white',
+        'l-zinc': '-10px 0 10px #18181b'
       },
-      height:{
-        header:'72px',
-        main:'calc(100vh - 72px)',
+      height: {
+        header: '72px',
+        main: 'calc(100vh - 72px)',
       },
       colors: {
         main: '#f44c58',

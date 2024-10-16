@@ -1,22 +1,24 @@
 <template>
-    <div class="bg-white sticky top-0 z-10 left-0">
-        <ul class="flex  overflow-x-auto overflow-y-hidden relative p-1 text-xs text-zinc-600" ref="ulTarget">
+    <div class="bg-white sticky top-0 z-10 left-0 dark:bg-zinc-900">
+        <ul class="flex  overflow-x-auto overflow-y-hidden relative p-1 text-xs text-zinc-600 dark:text-zinc-300"
+            ref="ulTarget">
 
 
             <!-- 汉堡按钮 -->
-            <li class="flex items-center fixed right-[-1px] top-0 h-4 px-1 z-20 bg-white shadow-l-white"
+            <li class="flex items-center fixed right-[-1px] top-0 h-4 px-1 z-20 bg-white shadow-l-white dark:bg-zinc-900 dark:shadow-l-zinc"
                 @click="isShowPopup = true">
-                <pxh-svg-icon name="hamburger" class="w-1.5 h-1.5 " />
+                <pxh-svg-icon name="hamburger" class="w-1.5 h-1.5 dark:fill-zinc-300" />
             </li>
 
             <!-- 滑块 -->
-            <li class="absolute rounded-lg duration-200 h-[22px] bg-zinc-900" :style="sliderStyle">
+            <li class="absolute rounded-lg duration-200 h-[22px] bg-zinc-900 dark:bg-zinc-300" :style="sliderStyle">
             </li>
 
             <!-- 分类选项 -->
             <li v-for="(cate, index) in $store.getters.categorys" :key="cate.id"
-                class="shrink-0 px-1.5 py-0.5 z-10 duration-200 font-medium last:mr-4" :ref="setItemRef"
-                :class="currentCateTarget === index ? 'text-zinc-100' : ''" @click="onItemClick(index)">
+                class="shrink-0 px-1.5 py-0.5 z-10 duration-200 font-medium last:mr-4 text-zinc-900 dark:text-zinc-300"
+                :ref="setItemRef" :class="currentCateTarget === index ? 'text-zinc-100' : ''"
+                @click="onItemClick(index)">
                 {{ cate.name }}
             </li>
         </ul>

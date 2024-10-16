@@ -1,5 +1,6 @@
 <template>
-  <div ref="containerTarget" class="group relative p-0.5 rounded-xl border-white duration-500 hover:bg-blue-200/40">
+  <div ref="containerTarget"
+    class="group relative p-0.5 rounded-xl border-white dark:border-zinc-200 duration-500 hover:bg-blue-200/40">
     <div>
       <!-- 搜索图标 -->
       <pxh-svg-icon class="w-1.5 h-1.5 absolute translate-y-[-50%] top-[50%] left-2" name="search" color="#707070" />
@@ -27,7 +28,7 @@
     <transition name="slide">
       <!--      下拉区有内容才展示 -->
       <div v-if="$slots.dropdown" v-show="isFocus"
-        class="max-h-[368px] w-full text-base overflow-auto bg-white dark:bg-zinc-800 absolute z-20 left-0 top-[56px] p-2 rounded border border-zinc-200 dark:border-zinc-600 duration-200 hover:shadow-3xl scrollbar-thin scrollbar-thumb-zinc-200 dark:scrollbar-thumb-zinc-900 scrollbar-track-transparent">
+        class="max-h-[368px] w-full text-base overflow-auto bg-white  dark:bg-zinc-800 absolute z-20 left-0 top-[56px] p-2 rounded border border-zinc-200 dark:border-zinc-600 duration-200 hover:shadow-3xl scrollbar-thin scrollbar-thumb-zinc-200 dark:scrollbar-thumb-zinc-900 scrollbar-track-transparent">
         <slot name="dropdown" />
       </div>
     </transition>

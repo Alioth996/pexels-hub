@@ -5,7 +5,11 @@ import App from './App.vue'
 import './styles/index.scss'
 import router from './router'
 import store from './store'
+import {
+    useTheme
+} from './hooks/useTheme'
 
+useTheme()
 import {
     changeRem
 } from './utils/flexible'

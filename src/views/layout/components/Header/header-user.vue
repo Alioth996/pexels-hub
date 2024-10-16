@@ -49,7 +49,7 @@ const menuArr = [
     <pxh-popover placement="bottom-left" class="flex items-center">
         <template #reference>
             <div
-                class="relative flex items-center py-0.5 px-1 rounded-sm cursor-pointer hover:bg-zinc-100 duration-200">
+                class="relative flex items-center py-0.5 px-1 rounded-sm cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-900 duration-200">
                 <img :src="`${avatar}`" alt="" width="32" height="32">
                 <div>
                     <!-- 下箭头 -->

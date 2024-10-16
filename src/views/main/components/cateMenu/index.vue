@@ -5,7 +5,7 @@
     </h2>
     <ul class="overflow-y-scroll">
       <li v-for="(item, index) in $store.getters.categorys" :key="item.id"
-        class="text-base text-zinc-900 dark:text-zinc-300 px-1.5 py-1 duration-200 active:bg-yellow-500 active:dark:bg-zinc-200"
+        class="text-base text-zinc-900 dark:text-zinc-300 px-1.5 py-1 duration-200 active:bg-yellow-500 dark:active:bg-zinc-900"
         @click="$emit('onItemClick', index)">
         {{ item.name }}
       </li>

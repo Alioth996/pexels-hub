@@ -2,18 +2,14 @@
   <div>
     <teleport to="body">
       <transition name="fade">
-        <div
-          v-show="isPopupShow"
-          @click="isPopupShow = false"
-          class="w-full h-full fixed top-0 left-0 bg-zinc-900/80 z-40"
-        ></div>
+        <div v-show="isPopupShow" @click="isPopupShow = false"
+          class="w-full h-full fixed top-0 left-0 bg-zinc-900/80 z-40"></div>
       </transition>
+
+      <!-- 内容 -->
       <transition name="popup">
-        <div
-          v-show="isPopupShow"
-          v-bind="$attrs"
-          class="w-screen bg-white z-50 fixed bottom-0 rounded-t"
-        >
+        <div v-show="isPopupShow" v-bind="$attrs"
+          class="w-screen bg-white dark:bg-zinc-900 z-50 fixed bottom-0 rounded-t">
           <slot />
         </div>
       </transition>
